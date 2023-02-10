@@ -1,9 +1,9 @@
-﻿Console.Clear();
+﻿//Найти квадратный корень числа
 
+Console.Clear();
 Console.WriteLine("Введите число: ");
-int value = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("квадрат числа " + value +" равен: " + value* value);
+int value = Convert.ToInt32(Console.ReadLine()); // Конвертирует вводимое число в числовую
 
-Console.WriteLine("Способ 2. Квадрат числа " + value + " равен: " + Math.Pow(value,2)); // 2 вариант
-
+Console.WriteLine("Квадратный корень числа: " + value*value);
+Console.WriteLine("Другой вариант: "+ Math.Pow(value,2));// Мат формула
