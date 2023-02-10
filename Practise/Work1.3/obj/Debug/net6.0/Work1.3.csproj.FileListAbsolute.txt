@@ -1,0 +1,15 @@
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\bin\Debug\net6.0\Work1.3.exe
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\bin\Debug\net6.0\Work1.3.deps.json
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\bin\Debug\net6.0\Work1.3.runtimeconfig.json
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\bin\Debug\net6.0\Work1.3.dll
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\bin\Debug\net6.0\Work1.3.pdb
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.csproj.AssemblyReference.cache
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.AssemblyInfoInputs.cache
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.AssemblyInfo.cs
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.csproj.CoreCompileInputs.cache
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.dll
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\refint\Work1.3.dll
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.pdb
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\Work1.3.genruntimeconfig.cache
+C:\Personal\Обучение\Home work\Языки программирования\С#\Practise\Work1.3\obj\Debug\net6.0\ref\Work1.3.dll
