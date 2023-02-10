@@ -1,4 +1,15 @@
 ﻿Console.Clear();
+//Найти квадратный корень числа
+  /*<-d  #region Mathematical root;
+Console.Clear();
+Console.WriteLine("Введите число: ");
+
+int value = Convert.ToInt32(Console.ReadLine()); // Конвертирует вводимое число в числовую
+
+Console.WriteLine("Квадратный корень числа: " + value*value);
+Console.WriteLine("Другой вариант: "+ Math.Pow(value,2));// Мат формула
+#endregion*/
+
 /* Задача №1. Напишите программу, которая на вход принимает два числа и проверяет,
 является ли первое число квадратом второго.
 a = 25, b = 5 -> да 
