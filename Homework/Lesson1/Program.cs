@@ -63,3 +63,14 @@ else
 
 5 -> 2, 4
 8 -> 2, 4, 6, 8*/
+/*#region Задача 8
+    Console.WriteLine("--- Все четные числа введеного числа ---");
+
+    Console.Write("Введите число: ");
+    int evenNumbers = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Ответ: ");
+    for (int i = 1; i<=evenNumbers; i++)
+       if (i%2==0)
+       Console.Write(" ~ " +i);
+    
+#endregion*/
