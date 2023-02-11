@@ -25,7 +25,7 @@ else
 2, 3, 7 -> 7
 44 5 78 -> 78
 22 3 9 -> 22*/
-#region Задача 4
+/*<-delete #region Задача 4
     Console.WriteLine("--- Задача 3: Максимальное число из 3-х чисел ---");
     Console.Write("Введите первое число: ");
     int firstValue = Convert.ToInt32(Console.ReadLine());
@@ -41,13 +41,23 @@ else
         maxValue = thirdValue;
     Console.WriteLine("Ответ: Max = "+maxValue);
 
-#endregion
+#endregion*/
 
 /*Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
 4 -> да
 -3 -> нет
 7 -> нет*/
+/*<-delete #region Задача 6
+    Console.WriteLine("--- Задача 6: Является ли число четным? ---");
+
+    Console.Write("Введите число: ");
+    int evenNumber = Convert.ToInt32(Console.ReadLine());
+    if (evenNumber%2==0)
+       Console.WriteLine("Да, это четное число!");
+    else
+       Console.WriteLine("Нет!");
+#endregion*/
 
 /*Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 
