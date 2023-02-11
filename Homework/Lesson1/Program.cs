@@ -1,10 +1,10 @@
 ﻿//Урок 1. Знакомство с языком программирования С#
 Console.Clear();
+
 /*Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 a = 5; b = 7 -> maxNumberx = 7
 a = 2 b = 10 -> maxNumberx = 10
 a = -9 b = -3 -> maxNumberx = -3*/
-
 #region Задача 2
 Console.WriteLine("--- Задача 2: Сравнение чисел min/max ---");
 Console.Write("Введите 1 число: ");
@@ -19,7 +19,6 @@ else
 {
     Console.WriteLine("Ответ: Max = "+ secondValue + "; Min = "+ firstValue);
 }
-
 #endregion*/
 
 Console.WriteLine();
@@ -27,7 +26,6 @@ Console.WriteLine();
 2, 3, 7 -> 7
 44 5 78 -> 78
 22 3 9 -> 22*/
-
 #region Задача 4
     Console.WriteLine("--- Задача 4: Максимальное число из 3-х чисел ---");
     Console.Write("Введите первое число: ");
@@ -43,7 +41,6 @@ Console.WriteLine();
     if (maxNumber < thirdNumber)
         maxNumber = thirdNumber;
     Console.WriteLine("Ответ: Max = "+maxNumber);
-
 #endregion*/
 
 Console.WriteLine();
@@ -51,7 +48,6 @@ Console.WriteLine();
 4 -> да
 -3 -> нет
 7 -> нет*/
-
 #region Задача 6
     Console.WriteLine("--- Задача 6: Является ли число четным? ---");
 
@@ -61,14 +57,12 @@ Console.WriteLine();
        Console.WriteLine("Да, это четное число!");
     else
        Console.WriteLine("Нет!");
-
 #endregion*/
 
 Console.WriteLine();
 /*Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 5 -> 2, 4
 8 -> 2, 4, 6, 8*/
-
 #region Задача 8
     Console.WriteLine("--- Задача 8: Все четные числа введеного числа ---");
     
@@ -77,6 +71,5 @@ Console.WriteLine();
     Console.Write("Ответ: ");
     for (int i = 1; i<=evenNumbers; i++)
        if (i%2==0)
-       Console.Write(" ~ " +i);
-    
+       Console.Write(" ~ " +i); 
 #endregion*/
