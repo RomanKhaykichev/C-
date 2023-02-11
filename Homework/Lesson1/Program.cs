@@ -5,7 +5,7 @@ Console.Clear();
 a = 5; b = 7 -> max = 7
 a = 2 b = 10 -> max = 10
 a = -9 b = -3 -> max = -3*/
-/*<-delete #region Задача 2\
+/*<-delete #region Задача 2
 Console.WriteLine("--- Задача 2: Сравнение чисел min/max ---");
 Console.Write("Введите 1 число: ");
 int firstValue = Convert.ToInt32(Console.ReadLine());
@@ -22,10 +22,26 @@ else
 #endregion*/
 
 /*Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
-
 2, 3, 7 -> 7
 44 5 78 -> 78
 22 3 9 -> 22*/
+#region Задача 4
+    Console.WriteLine("--- Задача 3: Максимальное число из 3-х чисел ---");
+    Console.Write("Введите первое число: ");
+    int firstValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите второе число: ");
+    int secondValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите третье число: ");
+    int thirdValue = Convert.ToInt32(Console.ReadLine());
+
+    int maxValue = firstValue;
+    if (maxValue < secondValue)
+        maxValue = secondValue;
+    if (maxValue < thirdValue)
+        maxValue = thirdValue;
+    Console.WriteLine("Ответ: Max = "+maxValue);
+
+#endregion
 
 /*Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
