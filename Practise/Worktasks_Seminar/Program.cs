@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 //Найти квадратный корень числа
-   /*<-d #region Mathematical root;
+#region Mathematical root;
 Console.Clear();
 Console.WriteLine("Введите число: ");
 
@@ -16,7 +16,7 @@ a = 25, b = 5 -> да
 a = 2, b = 10 -> нет 
 a = 9, b = -3 -> да 
 a = -3 b = 9 -> нет*/
-   /*<-d #region Задача №1;
+#region Задача №1;
 Console.WriteLine("Task 1: Является ли 1 число квадратным корнем второго?");
 Console.Write("Введите первое число: ");
 int value1 = Convert.ToInt32(Console.ReadLine());
@@ -32,7 +32,7 @@ else
 /*Задача №3. Напишите программу, которая будет выдавать название дня недели по заданному номеру.
 3 -> Среда 
 5 -> Пятница*/
-   /*<-d #region Задача №3;
+#region Задача №3;
 Console.Write("Task 3: Введите номер дня недели: ");
 int valueWeek = Convert.ToInt32(Console.ReadLine());
 
@@ -68,7 +68,7 @@ switch(valueWeek) //Конструкция switch/case оценивает нек
 /*Задача №5. Напишите программу, которая на вход принимает одно число (N), а на выходе показывает все целые числа в промежутке от -N до N.
 4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4" 
 2 -> " -2, -1, 0, 1, 2"*/
-   /*<-d #region Задача №5;
+#region Задача №5;
 Console.WriteLine("Task 5: Напишите число для построения разброса: ");
 int valueRange = Convert.ToInt32(Console.ReadLine());
 for (int i = -valueRange; i <= valueRange; i++)
@@ -81,7 +81,7 @@ for (int i = -valueRange; i <= valueRange; i++)
 	456 -> 6
 	782 -> 2
 	918 -> 8*/
-   /*<-d #region Задача №7;
+#region Задача №7;
 Console.WriteLine("");
 Console.WriteLine("Задача 7: Напишиет 3х значное число: ");
 int value3x = Convert.ToInt32(Console.ReadLine());
