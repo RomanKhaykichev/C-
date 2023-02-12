@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Work1.3\\Work1.3.csproj": {}
+    "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Worktasks_Seminar\\Work1.3.csproj": {}
   },
   "projects": {
-    "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Work1.3\\Work1.3.csproj": {
+    "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Worktasks_Seminar\\Work1.3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Work1.3\\Work1.3.csproj",
+        "projectUniqueName": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Worktasks_Seminar\\Work1.3.csproj",
         "projectName": "Work1.3",
-        "projectPath": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Work1.3\\Work1.3.csproj",
+        "projectPath": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Worktasks_Seminar\\Work1.3.csproj",
         "packagesPath": "C:\\Users\\mrrom\\.nuget\\packages\\",
-        "outputPath": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Work1.3\\obj\\",
+        "outputPath": "C:\\Personal\\Обучение\\Home work\\Языки программирования\\С#\\Practise\\Worktasks_Seminar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mrrom\\AppData\\Roaming\\NuGet\\NuGet.Config"
