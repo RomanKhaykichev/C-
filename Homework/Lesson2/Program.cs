@@ -54,6 +54,46 @@ if (numberCheck < 100)
 
 Console.WriteLine();
 
+#region Задача 13.1 Вариант 2
+Console.WriteLine("--- Задача 13.1 new version: 3-я цифра заданного числа---");
+
+int Print(string message)
+{
+    Console.WriteLine(message);
+    string numberST = Console.ReadLine();
+    int number = Convert.ToInt32(numberST);
+    return number;
+}
+
+int number1 = Print("sВведите число: ");
+
+int i = 1;
+while (1 == 1)
+{
+    if (number1 > (100 * Math.Pow(10, i)) && number1 < (1000 * Math.Pow(10, i)))
+    {
+        double thirdNumber = number1 / Math.Pow(10, i)%10;
+        double thirdNumber1 = Math.Floor(thirdNumber);
+        Console.WriteLine($"Цифра -{thirdNumber1}- третья в числе {number1}");
+        break;
+    }
+    if (number1>100 && number1<1000)
+    {
+        int thirdNumber = number1 % 10;
+        Console.WriteLine($"Цифра -{thirdNumber}- третья в числе {number1}");
+        break;  
+    }
+    if (number1 < 100)
+    {
+        Console.WriteLine(" Третьей цифры не существует: ");
+        break;
+    }
+    i++;
+}
+ 
+#endregion
+
+Console.WriteLine();
 /*Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели,
 и проверяет, является ли этот день выходным.
 6 -> да
