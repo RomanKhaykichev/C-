@@ -7,7 +7,7 @@ Console.Clear();
 782 -> 8
 918 -> 1*/
 
-#region Задача 10.
+/*#region Задача 10.
 Console.WriteLine("---Задача 10: Вторая цифра трехзначного числа---");
 
 int number = new Random().Next(100, 1000);
@@ -24,7 +24,7 @@ Console.WriteLine();
 78 -> третьей цифры нет
 32679 -> 6*/
 
-#region Задача 13.
+/*#region Задача 13.
 Console.WriteLine("--- Задача 13: 3-я цифра заданного числа---");
 
 Console.WriteLine("Введите число: ");
@@ -100,7 +100,7 @@ Console.WriteLine();
 7 -> да
 1 -> нет*/
 
-#region Задача 15.
+/*#region Задача 15.
 Console.WriteLine("--- Задача 15: Проверка дня недели (выходной) ---");
 
 Console.WriteLine("Введите цифру дня недели: ");
