@@ -86,7 +86,7 @@ int Print2(string message)
 }
 void ValuePow3(int number)
 {
-    for (int value = 1; value < number + 1; value++)
+    for (int value = 1; value <= number; value++)
     {
         double num = Math.Pow(value, 3);
         Console.Write(value < number ? $"{num}," : $"{num}.");
