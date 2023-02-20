@@ -111,7 +111,7 @@ string newText1 = Replace(newText, 'с', 'С');
 Console.WriteLine(newText1);
 #endregion*/
 
-#region Сортировка чисел
+/*#region Сортировка чисел
 int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
 
 void PrintArray(int[] array)
@@ -143,5 +143,37 @@ PrintArray(arr);
 
 SelectionSort(arr);
 PrintArray(arr);
-#endregion
+#endregion*/
 
+#region СОртировка чисел от Мах
+Console.Clear();
+int[] arr = { 1, 2, 5, 7, 9, 3, 6, 4, 9, 9, 5 };
+
+void ToPrint(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+}
+
+void ConvertArray(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxNumber = array[i];
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if(array[j]>maxNumber) maxNumber=array[j]; 
+        }
+        int temp = array[i];
+        array[i]=maxNumber;
+        maxNumber=temp;
+    }
+}
+ToPrint(arr);
+Console.WriteLine();
+
+ConvertArray(arr);
+ToPrint(arr);
+#endregion
