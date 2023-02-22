@@ -34,26 +34,24 @@ Console.WriteLine();
 82 -> 10
 9012 -> 12*/
 #region Task27
+
 int Print(string message)
 {
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine());
 }
-int[] SumNumbersInNum(int[] number)
+
+int SumValueInNumbers(int number)
 {
-    int sum = 0;
-    for (int i = 0; i < number.Lenght; i++)
+    int result=0;
+    while(number>0)
     {
-        sum += number[i];
+        result+=number%10;
+        number/=10;
     }
-    return sum;
+    return result;
 }
-
-int numLenght = Print("Введите число: ");
-int[] array = new int[num.Lenght];
-int sum = SumNumbersInNum(array);
-Console.WriteLine($"Сумма цифр в числе = {sum}");
-
+Console.WriteLine(SumValueInNumbers(Print("HH: ")));
 
 Console.WriteLine();
 #endregion
