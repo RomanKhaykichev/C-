@@ -34,29 +34,30 @@ Console.WriteLine();
 82 -> 10
 9012 -> 12*/
 #region Task27
+Console.WriteLine("---Задача 27: сумма цифр в числе---");
 
-int Print(string message)
+int Print2(string message)
 {
     Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
+    return int.Parse(Console.ReadLine());
 }
 
-int SumValueInNumbers(int number)
+int SumValueInNumber(int number)
 {
-    int result=0;
-    while(number>0)
-    {
-        result+=number%10;
-        number/=10;
-    }
-    return result;
+    //write
 }
-Console.WriteLine(SumValueInNumbers(Print("HH: ")));
 
+
+Console.WriteLine(SumValueInNumber(Print2("Введите число: ")));
 Console.WriteLine();
-#endregion
+#endregion*/
 
 /*Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33]*/
+
+#region Task 29:
+Console.Write("---Задача 29:Массив из N элементов---");
+
+
+#endregion
