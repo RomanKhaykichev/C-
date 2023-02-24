@@ -4,7 +4,7 @@ Console.Clear();
 в натуральную степень B.
 3, 5 -> 243 (3⁵)
 2, 4 -> 16*/
-/*#region Task25
+#region Task25
 Console.WriteLine("---Задача 25: число А в в натуральную степень В---");
 
 int Print(string message)
@@ -53,7 +53,8 @@ int SumValueInNumbers(int number)
     return sum;
 }
 
-Console.WriteLine(SumValueInNumber(Print2("Введите число: ")));
+
+Console.WriteLine(SumValueInNumbers(Print2("Введите число: ")));
 Console.WriteLine();
 #endregion*/
 
@@ -62,7 +63,7 @@ Console.WriteLine();
 6, 1, 33 -> [6, 1, 33]*/
 
 #region Task 29:
-Console.Write("---Задача 29:Массив из N элементов---");
+Console.WriteLine("---Задача 29: Массив из N Random(1,100) элементов---");
 
 int Print3(string message)
 {
@@ -83,12 +84,14 @@ int[] GetArray(int lenght)
 void PrintArray(int[] array)
 {
     Console.Write("[");
-    for(int i=0; i<array.Lenght; i++)
+    for(int i=0; i<array.Length; i++)
     {
-        Console.Write(i<array.Lenght? $"{array[i]}, ":"]");
+        Console.Write(i<array.Length-1? $"{array[i]}, ":$"{array[i]}]");
     }
 }
 
-Console.WriteLine(PrintArray(GetArray(Print("Введите колличество элементов: ")));
+int getnumber = Print3("Введите колличество элементов: ");
+int[] getarray = GetArray(getnumber);
+PrintArray(getarray);
 
-#endregion
+#endregion*/
