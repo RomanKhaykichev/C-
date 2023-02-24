@@ -42,11 +42,16 @@ int Print2(string message)
     return int.Parse(Console.ReadLine());
 }
 
-int SumValueInNumber(int number)
+int SumValueInNumbers(int number)
 {
-    //write
+    int sum=0;
+    while(number>0)
+    {
+        sum+=number%10;
+        number=number/10;
+    }
+    return sum;
 }
-
 
 Console.WriteLine(SumValueInNumber(Print2("Введите число: ")));
 Console.WriteLine();
@@ -59,5 +64,31 @@ Console.WriteLine();
 #region Task 29:
 Console.Write("---Задача 29:Массив из N элементов---");
 
+int Print3(string message)
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine());
+}
+
+int[] GetArray(int lenght)
+{
+    int[] array = new int[lenght];
+    for(int i=0;i<lenght;i++)
+    {
+        array[i]=new Random().Next(1,100);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    Console.Write("[");
+    for(int i=0; i<array.Lenght; i++)
+    {
+        Console.Write(i<array.Lenght? $"{array[i]}, ":"]");
+    }
+}
+
+Console.WriteLine(PrintArray(GetArray(Print("Введите колличество элементов: ")));
 
 #endregion
