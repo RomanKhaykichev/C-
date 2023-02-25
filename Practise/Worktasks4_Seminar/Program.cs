@@ -5,7 +5,7 @@
 //8 -> 36
 
 Console.Clear();
-
+/*
 Console.WriteLine("Введите число А:");
 
 int a = Convert.ToInt32(Console.ReadLine());
@@ -26,7 +26,7 @@ int GetSumByNumber(int limit)
 456-> 3
 78-> 2
 89126-> 5*/
-Console.WriteLine("Введите число А:");
+/*Console.WriteLine("Введите число А:");
 int a = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(CountDigitsInNumber(a));
@@ -43,14 +43,13 @@ return i;
 }
 */
 
-
-
 /*Задача 26: Напишите программу, которая принимает на вход число и 
 выдаёт количество цифр в числе.
 456 -> 3
 78 -> 2
 89126 -> 5
 */
+/*
 int GetLenghtNumberToStr(int value) 
 {
     string spamNumber = value.ToString();
@@ -71,6 +70,7 @@ int GetLenghtNumberMath(int value)
     }
     return count;
 }
+
 int[] arrNums = new int[] {456, 78, 89126, 100, 0, 11};
 Console.WriteLine($"Метод строк");
 foreach (int num in arrNums)
@@ -89,6 +89,7 @@ foreach (int num in arrNums)
  чисел от M до N.
 2,4 -> 24 
 1,5 -> 120*/
+/*
 int MultNum(int a, int b)
 {
     int result;
@@ -126,7 +127,6 @@ return array;
 
 }
 
-
 void print(int []array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -140,5 +140,5 @@ void print(int []array)
 int []array = new int [7];
 fillArray(array);
 print(array);
-*/
+
 // (https://gitflic.ru/project/alexandryalovoy/dotnet-gb/file?file=Lesson_4);
