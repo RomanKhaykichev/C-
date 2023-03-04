@@ -6,7 +6,7 @@ Console.Clear();
 0, 7, 8, -2, -2 -> 2
 1, -7, 567, 89, 223-> 3*/
 
-#region Task 41
+/* #region Task 41
 Console.WriteLine("---Задача 41: Ввести числа. Подсчет положительных чисел---");
 
 Console.Write("Сколько чисел вы планируете ввести?: ");
@@ -36,27 +36,68 @@ int CountOfPossitiveNumbers(int[] array)
     }
     return count;
 }
-bool CheckZeroInArray(int[] array)
-{
-    foreach (int i in array)
-    {
-        if (array[i]==0) return true;
-    }
-}
+
 
 int[] array = GetArray(number);
 PrintArray(array);
 Console.WriteLine($"Колличество положительных чисел: {CountOfPossitiveNumbers(array)}");
-Console.WriteLine(CheckZeroInArray(array)? "0 - положительное число": "");// добавить при отсутствии нуля
 
 Console.WriteLine();
-#endregion
+#endregion*/
 
 
 /*Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
 заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2
 задаются пользователем.
 b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)*/
+
+/*#region Task 43
+Console.WriteLine("---Задача 43: Точка пересечения 2-х прямых---");
+
+double Printvalues(string message)
+{
+    Console.Write(message);
+    return Convert.ToDouble(Console.ReadLine());
+}
+double[] InputLineData(int line)
+{
+    double[] array = new double[2];
+    for (int i = 0; i < 2; i++)
+    {
+        array[i] = Printvalues($"Введите значения для линии {line}: ");
+    }
+    return array;
+}
+double[] FindCoordinateIntersection(double[] line1, double[] line2)
+{
+    double[] intersection = new double[2];
+    intersection[0] = (line2[0] - line1[0]) / (line1[1] - line2[1]);
+    intersection[1] = line2[1] * intersection[0] + line2[0];
+    return intersection;
+}
+void PrintCoordinate(double[] intersection)
+{
+    Console.WriteLine($"Координаты пересечения -> ( {string.Join(" ; ", intersection)} )");
+}
+bool CheckNotParallel(double[] line1, double[] line2)
+{
+    if (line1[1] == line2[1])
+    {
+        Console.Write("! Прямые параллельны !");
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+double[] line1 = InputLineData(1);
+double[] line2 = InputLineData(2);
+if (CheckNotParallel(line1,line2)) PrintCoordinate(FindCoordinateIntersection(line1, line2));
+
+Console.WriteLine();
+#endregion*/
 
 // Необязательная к выполнению задача
 /*Дополнительная задача*: Напишите программу, которая задаёт массив из n элементов,
