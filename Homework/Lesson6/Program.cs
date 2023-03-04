@@ -45,7 +45,6 @@ Console.WriteLine($"Колличество положительных чисел
 Console.WriteLine();
 #endregion*/
 
-
 /*Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
 заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2
 задаются пользователем.
@@ -105,6 +104,62 @@ Console.WriteLine();
 или вправо на 1 позицию.
 [8, 5, 1, 7, 0] - [5, 1, 7, 0, 8] - сдвиг влево
 [8, 5, 1, 7, 0] - [0, 8, 5, 1, 7] - сдвиг вправо*/
+
+/*#region Task1*
+Console.WriteLine("---Task1*---");
+
+int PrintSize(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+int[] FillArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+    Random num = new Random();
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = num.Next(min, max + 1);
+    }
+    return array;
+}
+void PrintFillArray(int[] array)
+{
+    Console.WriteLine($"Массив -> [ {string.Join(" , ", array)} ]");
+}
+int[] Moveleft(int[] array)
+{
+    int[] result = new int[array.Length];
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        result[i] = array[i + 1];
+        result[array.Length - 1] = array[0];
+    }
+    return result;
+}
+int[] MoveRight(int[] array)
+{
+    int[] result = new int[array.Length];
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        result[i+1]=array[i];
+        result[0]=array[array.Length-1];
+    }
+    return result;
+}
+
+
+int[] arr = FillArray(PrintSize("Size: "), 0, 10);
+PrintFillArray(arr);
+Console.WriteLine("Move Right -> 1 "+" <=> "+"Move Left -> -1");
+int side = int.Parse(Console.ReadLine());
+
+if (side==1) PrintFillArray(MoveRight(arr));
+if (side==-1) PrintFillArray(Moveleft(arr));
+if (side !=1 && side !=-1) Console.Write("Не верные данные");
+
+Console.WriteLine();
+#endregion*/
 
 /*Дополнительная задача 2 (задача со звёздочкой):
 Напишите программу, которая задаёт массив из n элементов, которые необходимо заполнить
