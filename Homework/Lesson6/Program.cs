@@ -6,7 +6,7 @@ Console.Clear();
 0, 7, 8, -2, -2 -> 2
 1, -7, 567, 89, 223-> 3*/
 
-/* #region Task 41
+#region Task 41
 Console.WriteLine("---Задача 41: Ввести числа. Подсчет положительных чисел---");
 
 Console.Write("Сколько чисел вы планируете ввести?: ");
@@ -50,7 +50,7 @@ Console.WriteLine();
 задаются пользователем.
 b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)*/
 
-/*#region Task 43
+#region Task 43
 Console.WriteLine("---Задача 43: Точка пересечения 2-х прямых---");
 
 double Printvalues(string message)
@@ -105,7 +105,7 @@ Console.WriteLine();
 [8, 5, 1, 7, 0] - [5, 1, 7, 0, 8] - сдвиг влево
 [8, 5, 1, 7, 0] - [0, 8, 5, 1, 7] - сдвиг вправо*/
 
-/*#region Task1*
+#region Task1*
 Console.WriteLine("---Task1*---");
 
 int PrintSize(string message)
@@ -156,7 +156,7 @@ int side = int.Parse(Console.ReadLine());
 
 if (side==1) PrintFillArray(MoveRight(arr));
 if (side==-1) PrintFillArray(Moveleft(arr));
-if (side !=1 && side !=-1) Console.Write("Не верные данные");
+if (side !=1 && side !=-1) Console.Write("Неверные данные");
 
 Console.WriteLine();
 #endregion*/
@@ -166,3 +166,46 @@ Console.WriteLine();
 случайными значениями и определить существует ли пара соседних элементов с одинаковыми значениями,
 при наличии такого элемента заменить его на уникакальное значение.
 [1,2,3,3] -> [1,2,3,4]*/
+
+#region Task 2*
+Console.WriteLine("---Task2*---");
+
+int PrintArraySize(string message)
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine());
+}
+int[] FillArray2(int size, int min, int max)
+{
+    int[] array = new int[size];
+    Random num = new Random();
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = num.Next(min, max + 1);
+    }
+    return array;
+}
+void PrintArray2(int[] array)
+{
+    Console.WriteLine($"Массив -> [{string.Join(" , ", array)}]");
+}
+int[] ReplaceUniqueValue(int[] array)
+{
+    int[] unique = new int[array.Length];
+    unique = array;
+    for (int i = 1; i < array.Length - 2; i++)
+    {
+        if (array[i] == array[i - 1]) unique[i - 1] = array[i] + 1;
+        if (array[i] == array[i + 1]) unique[i + 1] = array[i] + 1;
+        if (array[i - 1] == array[i + 1]) unique[i + 1] = array[i] + 1;
+    }
+    return unique;
+}
+
+int size = PrintArraySize("Size array: ");
+int[] arr2 = FillArray2(size, 1, 10);
+PrintArray2(arr2);
+PrintArray2(ReplaceUniqueValue(arr2));
+
+Console.WriteLine();
+#endregion
