@@ -156,7 +156,7 @@ int side = int.Parse(Console.ReadLine());
 
 if (side==1) PrintFillArray(MoveRight(arr));
 if (side==-1) PrintFillArray(Moveleft(arr));
-if (side !=1 && side !=-1) Console.Write("Неверные данные");
+if (side !=1 && side !=-1) Console.Write("Неверный ввод");
 
 Console.WriteLine();
 #endregion*/
