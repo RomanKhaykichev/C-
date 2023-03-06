@@ -96,7 +96,7 @@ int[] PrintIndexArray(string message)
     int[] index = new int[value.Length];
     for (int i = 0; i < value.Length; i++)
     {
-        index[i] = value[i];
+        index[i] = Convert.ToInt32(value[i]);
     }
     return index;
 }
@@ -107,6 +107,10 @@ void CheckArrayIndex(int[,] array, int[] index)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             if(i==index[0]&&j==index[1]) Console.WriteLine($"{array[i,j]}");
+            else  {
+                Console.WriteLine("Index Error");
+                break;
+            }
             // TODO
         }
     }
@@ -131,8 +135,60 @@ Console.WriteLine();
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
 /*#region Task 52
-    
+    Console.WriteLine("---Задача 52: Среднее арифметическое каждого столбца---");
 
+int[,] FillArray3(int rows,int columns, int min,int max)
+{
+    int[,] array=new int[rows,columns];
+    Random num = new Random();
+    for (int i=0;i<array.GetLenght(0);i++)
+    {
+        fro (int j=0;j<array.GetLenght(1);j++);
+        {
+            arrray[i,j]=num.Next(min,max+1);
+        }
+    }
+    return array;
+}
+void PrintArray3(int[,} array)
+{
+    for(int i=0;i<array.GetLenght(0);i++);
+    {
+        for(int j=0;j<array.GetLenght(1);j++);
+        {
+            Console.Write($" {array[i,j}");
+        }
+    }
+}
+void AverageColumns(int[,] array){
+//double[] average=array.GetLenght(1);
+int sum=0;
+for (int j=0;j<array.GetLenght(1);J++){
+    for(int i=0;i<array.GetLenght(0);i++){
+        sum+=array[i,j];
+    }
+    Console.Write(sum/array.GetLenght(0)+" ");
+    }
+}
+   
+                    
+/*void AverageColumns(int[,] array){
+double[] average=array.GetLenght(1);
+int sum=0;
+for (int j=0;j<array.GetLenght(1);J++){
+    for(int i=0;i<array.GetLenght(0);i++){
+        sum+=array[i,j];
+    }
+    average[j]=sum/array.GetLenght(0);
+    }
+    Console.Write(average +" ");
+}*/
+/*
+int[,]arr3=FillArray3(3,4,1,9);
+PrintArray3(arr3);
+Console.WriteLine("--------------");                     
+AverageColumns(arr3);
+                     
     Console.WriteLine(;)
 #endregion*/
 
