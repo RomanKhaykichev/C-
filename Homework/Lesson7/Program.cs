@@ -124,7 +124,7 @@ Console.WriteLine();
 5 9 2 3
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
-#region Task 52
+/*#region Task 52
 Console.WriteLine("---Задача 52: Среднее арифметическое каждого столбца---");
 
 int[,] FillArray3(int rows, int columns, int min, int max)
@@ -146,7 +146,7 @@ void PrintArray3(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($" {array[i, j]} ");
+            Console.Write($" {array[i, j]}  ");
         }
         Console.WriteLine();
     }
@@ -161,26 +161,13 @@ void AverageColumns(int[,] array)
         for (int i = 0; i < array.GetLength(0); i++)
         {
             sum += array[i, j];
-            str = array[i, j] % 10 == 0 ? "":" ";
+            str = array[i, j] % 10 == 0 ? "":"  ";
         }
         average = Math.Round(sum / array.GetLength(0), 1);
-        Console.Write($"{str}{average}|");
+        Console.Write($" {average}{str}");
         sum = 0;
     }
 }
-
-
-/*void AverageColumns(int[,] array){
-double[] average=array.GetLenght(1);
-int sum=0;
-for (int j=0;j<array.GetLenght(1);J++){
-    for(int i=0;i<array.GetLenght(0);i++){
-        sum+=array[i,j];
-    }
-    average[j]=sum/array.GetLenght(0);
-    }
-    Console.Write(average +" ");
-}*/
 
 int[,] arr3 = FillArray3(3, 4, 1, 9);
 PrintArray3(arr3);
@@ -203,10 +190,47 @@ Console.WriteLine();
 2 4 7 2
 4 3 5 3
 2 1 6 2 -> да*/
-/*#region Task 2*
-    
+#region Task 2*
+Console.WriteLine("---Задача 1: Сумма столбца больше суммы элементов расположенных в четырех углах двумерного массива---");
 
-    Console.WriteLine(;)
+void PrintArray4(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($" {array[i, j]}");
+        }
+        Console.WriteLine();
+    }
+}
+int[] SumColumnArray(int[,] array)
+{
+    int sumColumn = 0;
+    int[] sumColumnArray = new int[array.GetLength(1)];
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sumColumn += array[i, j];
+        }
+        sumColumnArray[j] = sumColumn;
+        sumColumn = 0;
+    }
+    return sumColumnArray;
+}
+void PrintArraySumColumn(int[]array)
+{
+    Console.WriteLine($"{string.Join(" ", array)}");
+}
+ ///TODO!!! Добавить метод сравнения SumColumnArray and SumAngles 
+
+int[,] array = new int[,] { { 4, 4, 7, 5 }, { 4, 3, 5, 3 }, { 8, 1, 6, 8 } };
+PrintArray4(array);
+Console.WriteLine("-----------");
+PrintArraySumColumn(SumColumnArray(array));
+
+Console.WriteLine();
 #endregion*/
 
 /*Дополнительная задача 2*: Вывести первые n строк треугольника Паскаля. Реализовать вывод в виде равнобедренного треугольника.
