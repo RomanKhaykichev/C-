@@ -62,7 +62,7 @@ Console.WriteLine();
 
 1,1 -> 9
 1,7 -> элемента с данными индексами в массиве нет*/
-#region Task 50
+/*#region Task 50
 Console.WriteLine("---Задача 50: Возвращает значение элемента по индексу---");
 
 int[,] FillArray2(int rows, int columns, int min, int max)
@@ -89,10 +89,20 @@ void PrintArray2(int[,] array)
         Console.WriteLine();
     }
 }
-int PrintIndex(string message)
+int PrintGetIndex(string message)
 {
     Console.Write(message);
     return int.Parse(Console.ReadLine());
+}
+void FindIndexValue(int[,] array, int rows, int columns)
+{
+    int lenghtRows = array.GetLength(0);
+    int lenghtColumns = array.GetLength(1);
+
+    if (lenghtRows < rows || lenghtColumns < columns)
+        Console.WriteLine("Элемента с данным индексом в массиве нет");
+    if (lenghtRows >= rows && lenghtColumns >= columns)
+        Console.WriteLine($"Элемент с данным индексом [{rows},{columns}] = {array[rows, columns]}");
 }
 
 
@@ -100,7 +110,9 @@ int[,] arr2 = FillArray2(3, 4, 1, 9);
 PrintArray2(arr2);
 Console.WriteLine("-----------");
 
-
+int rows = PrintGetIndex("Введите номер строки: ");
+int columns = PrintGetIndex("Введите номер столбца: ");
+FindIndexValue(arr2, rows, columns);
 
 Console.WriteLine();
 #endregion*/
@@ -112,10 +124,70 @@ Console.WriteLine();
 5 9 2 3
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
-/*#region Task 52
-    
+#region Task 52
+Console.WriteLine("---Задача 52: Среднее арифметическое каждого столбца---");
 
-    Console.WriteLine(;)
+int[,] FillArray3(int rows, int columns, int min, int max)
+{
+    int[,] array = new int[rows, columns];
+    Random num = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = num.Next(min, max + 1);
+        }
+    }
+    return array;
+}
+void PrintArray3(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($" {array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+void AverageColumns(int[,] array)
+{
+    double sum = 0;
+    double average = 0;
+    string str = string.Empty;
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum += array[i, j];
+            str = array[i, j] % 10 == 0 ? "":" ";
+        }
+        average = Math.Round(sum / array.GetLength(0), 1);
+        Console.Write($"{str}{average}|");
+        sum = 0;
+    }
+}
+
+
+/*void AverageColumns(int[,] array){
+double[] average=array.GetLenght(1);
+int sum=0;
+for (int j=0;j<array.GetLenght(1);J++){
+    for(int i=0;i<array.GetLenght(0);i++){
+        sum+=array[i,j];
+    }
+    average[j]=sum/array.GetLenght(0);
+    }
+    Console.Write(average +" ");
+}*/
+
+int[,] arr3 = FillArray3(3, 4, 1, 9);
+PrintArray3(arr3);
+Console.WriteLine("--------------");
+AverageColumns(arr3);
+
+Console.WriteLine();
 #endregion*/
 
 //Необязательная к выполнению задача (не будет влиять на итоговую оценку ДЗ)
