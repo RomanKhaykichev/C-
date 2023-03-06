@@ -89,35 +89,17 @@ void PrintArray2(int[,] array)
         Console.WriteLine();
     }
 }
-int[] PrintIndexArray(string message)
+int PrintIndex(string message)
 {
     Console.Write(message);
-    string value = Console.ReadLine();
-    int[] index = new int[value.Length];
-    for (int i = 0; i < value.Length; i++)
-    {
-        index[i] = value[i];
-    }
-    return index;
-}
-void CheckArrayIndex(int[,] array, int[] index)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if(i==index[0]&&j==index[1]) Console.WriteLine($"{array[i,j]}");
-            // TODO
-        }
-    }
+    return int.Parse(Console.ReadLine());
 }
 
 
 int[,] arr2 = FillArray2(3, 4, 1, 9);
 PrintArray2(arr2);
 Console.WriteLine("-----------");
-int[] index=PrintIndexArray("Введите индекс числа - rows,columns: ");
-CheckArrayIndex(arr2,index);
+
 
 
 Console.WriteLine();
