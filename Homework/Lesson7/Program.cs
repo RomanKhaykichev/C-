@@ -219,16 +219,35 @@ int[] SumColumnArray(int[,] array)
     }
     return sumColumnArray;
 }
-void PrintArraySumColumn(int[]array)
+void PrintArraySumColumn(int[] array)
 {
     Console.WriteLine($"{string.Join(" ", array)}");
 }
- ///TODO!!! Добавить метод сравнения SumColumnArray and SumAngles 
+void CompareSumColumnSumCorners(int[,] array, int[] sumColunArray)
+{
+    int compare=0;
+    int rowsLenght = array.GetLength(0) - 1;
+    int columnsLenght = array.GetLength(1) - 1;
+    int sumCorners = array[0, 0] + array[0, columnsLenght] + array[rowsLenght, 0] + array[rowsLenght, columnsLenght];
+    Console.WriteLine(sumCorners);
+    for (int i = 0; i < sumColunArray.Length; i++)
+    {
+        if(sumColunArray[i] > sumCorners ) compare++;
+    }
+    Console.WriteLine(compare>0? "Yes" : "NO");
+}
 
 int[,] array = new int[,] { { 4, 4, 7, 5 }, { 4, 3, 5, 3 }, { 8, 1, 6, 8 } };
 PrintArray4(array);
 Console.WriteLine("-----------");
 PrintArraySumColumn(SumColumnArray(array));
+CompareSumColumnSumCorners(array, SumColumnArray(array));
+Console.WriteLine("----------------------------------");
+int[,] array2 = new int[,] { { 2, 4, 7, 2 }, { 4, 3, 5, 3 }, { 2, 1, 6, 2 } };
+PrintArray4(array2);
+Console.WriteLine("-----------");
+PrintArraySumColumn(SumColumnArray(array2));
+CompareSumColumnSumCorners(array2, SumColumnArray(array2));
 
 Console.WriteLine();
 #endregion*/
