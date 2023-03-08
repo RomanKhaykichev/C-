@@ -37,7 +37,7 @@ void PrintArray(double[,] array)
         {
             str = array[i, j] < 0 ? " " : "  ";
             str = array[i, j] % 10 == 0 ? "   " : " ";
-            str = array[i, j] < 0 && array[i, j] % 10 != 0 ? " ":"  ";
+            str = array[i, j] < 0 && array[i, j] % 10 != 0 ? " " : "  ";
             Console.Write($"{str}{array[i, j]}");
         }
         Console.WriteLine();
@@ -96,8 +96,8 @@ int PrintGetIndex(string message)
 }
 void FindIndexValue(int[,] array, int rows, int columns)
 {
-    int lenghtRows = array.GetLength(0)-1;
-    int lenghtColumns = array.GetLength(1)-1;
+    int lenghtRows = array.GetLength(0) - 1;
+    int lenghtColumns = array.GetLength(1) - 1;
 
     if (lenghtRows < rows || lenghtColumns < columns)
         Console.WriteLine("Элемента с данным индексом в массиве нет");
@@ -161,10 +161,10 @@ void AverageColumns(int[,] array)
         for (int i = 0; i < array.GetLength(0); i++)
         {
             sum += array[i, j];
-            str = array[i, j] % 10 == 0 ? "":"  ";
+            str = array[i, j] % 10 == 0 ? "" : "  ";
         }
         average = Math.Round(sum / array.GetLength(0), 1);
-        Console.Write($" {average}{str}");
+        Console.WriteLine($" {average}{str}");
         sum = 0;
     }
 }
@@ -225,16 +225,16 @@ void PrintArraySumColumn(int[] array)
 }
 void CompareSumColumnSumCorners(int[,] array, int[] sumColunArray)
 {
-    int compare=0;
+    int compare = 0;
     int rowsLenght = array.GetLength(0) - 1;
     int columnsLenght = array.GetLength(1) - 1;
     int sumCorners = array[0, 0] + array[0, columnsLenght] + array[rowsLenght, 0] + array[rowsLenght, columnsLenght];
     Console.WriteLine(sumCorners);
     for (int i = 0; i < sumColunArray.Length; i++)
     {
-        if(sumColunArray[i] > sumCorners ) compare++;
+        if (sumColunArray[i] > sumCorners) compare++;
     }
-    Console.WriteLine(compare>0? "Yes" : "NO");
+    Console.WriteLine(compare > 0 ? "Yes" : "NO");
 }
 
 int[,] array = new int[,] { { 4, 4, 7, 5 }, { 4, 3, 5, 3 }, { 8, 1, 6, 8 } };
@@ -257,8 +257,59 @@ Console.WriteLine();
 Реализовать вывод в виде равнобедренного треугольника.
 
 N = 7 -> https://ibb.co/yWPZbG7*/
-/*#region Task 1*
-    
+#region Task 1*
+Console.WriteLine("---Задача 2*: Треугольник Паскаля (решение с лекции)---");
+int row = 7;
+int[,] triangle = new int[row, row];
+const int cellWidth = 3;
 
-    Console.WriteLine(;)
+void FillTriangle()
+{
+    for (int i = 0; i < row; i++)
+    {
+        triangle[i, 0] = 1;
+        triangle[i, i] = 1;
+    }
+    for (int i = 2; i < row; i++)
+    {
+        for (int j = 1; j < i; j++)
+        {
+            triangle[i, j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
+        }
+    }
+}
+void PrintTriangle()
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < row; j++)
+        {
+            if (triangle[i, j] != 0) Console.Write($"{triangle[i, j],cellWidth}");
+        }
+        Console.WriteLine();
+    }
+}
+void Magic()
+{
+    int col=cellWidth*row;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            Console.SetCursorPosition(col, i + 1);
+            if (triangle[i, j] != 0) Console.Write($"{triangle[i,j],cellWidth}");
+            //if (triangle[i, j] != 0) Console.WriteLine("*");
+            col+= cellWidth * 2;
+        }
+        col = cellWidth * row - cellWidth * (i + 1);
+        Console.WriteLine();
+    }
+}
+
+Console.Read();
+FillTriangle();
+//PrintTriangle();
+Magic();
+
+Console.WriteLine();
 #endregion*/
