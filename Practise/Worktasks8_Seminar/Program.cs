@@ -9,7 +9,7 @@ m = 3, n = 4.
 77 3 8 1  
 Разница между максимальным и минимальным элементом в массиве = 79*/
 
-/*
+
 Console.WriteLine("Введите количество строк двумерного массива");
 int rows = Convert.ToInt32(Console.ReadLine());
 
@@ -89,7 +89,7 @@ int GetMaxValue(int[,] inputArray){
 
 /*Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы.
 В случае, если это невозможно, программа должна вывести сообщение для пользователя.*/
-/*
+
 int Print(string message)
 {
     Console.Write(message);
@@ -119,8 +119,8 @@ void PrintArray(int[,] array)
         Console.WriteLine();
     }
 }
-*/
-/*int[,] SwapRowsColumns(int[,] array)
+
+int[,] SwapRowsColumns(int[,] array)
 {
     int[,] swapArray = new int[array.GetLength(1), array.GetLength(0)];
     for (int i = 0; i < array.GetLength(0); i++)
@@ -159,7 +159,7 @@ if (CheckLenghtArray(array, SwapRowsColumns(array))) PrintArray(SwapRowsColumns(
 // 3 встречается 1 раз 
 // 4 встречается 1 раз 
 // 6 встречается 2 раза
-/*
+
 Console.WriteLine("Введите количество строк двумерного массива");
 int rows = Convert.ToInt32(Console.ReadLine());
 
