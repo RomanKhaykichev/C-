@@ -1,4 +1,40 @@
 ﻿//Урок 8. Двумерные массивы. Продолжение
+Console.Clear();
+
+//Функции
+//Печать сообщения, возврат числа
+int GetPrintNumber(string message)
+{
+  Console.Write(message);
+  return int.Parse(Console.ReadLine());
+}
+
+//Заполнение массива
+int[,] FillArray(int rows,int columns,int min,int max)
+{
+  int[,] array=new int[rows,columns];
+  Random num = new Random();
+  for(int i=0;i<array.GetLenght(0);i++)
+  {
+    for(int j=0;array.GetLenght(1);j++)
+    {
+      array[i,j]=num.Next(min,max+1);
+    }
+  }
+}
+
+//Печать массива
+void PrintArray(int[,] array)
+{
+  for(int i=0;i<array.GetLenght(0);i++)
+  {
+    for(int j=0;array.GetLenght(1);j++)
+    {
+      Console.Write(array[i,j]+" ");
+    }
+    Console.WriteLine();
+  }
+}
 
 /*Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы
 каждой строки двумерного массива.
@@ -10,6 +46,49 @@
 7 4 2 1
 9 5 3 2
 8 4 4 2*/
+region Task 54
+Console.WriteLine("Задача 54: Упорядочить по убыванию элементы каждой строки");
+
+int[]SortArrayMaxMin(int[]array)
+{
+  int[]array=new int[array.Lenght];
+  int temp=0;
+  for(int i=1;i<array.Lenght;i++)
+  {
+    for(int j=0;j<array.Lenght-i;j++)
+    {
+      if(array[j]<array[j+1])
+      {
+        temp= array[j];
+      array[j]=array[j+1];
+      array[j+1]=temp;
+    }
+  }
+  return array;
+}
+
+int[,] SortRowsMaxToMin(int[,] array)
+{
+  int[,] sortArray=new int[array.GetLenght(0),array.GetLenght(1)];
+  for(int i=0;i<array.GetLenght(0);i++)
+  {
+    for(int j=0;j<array.GetLenght(1);j++)
+    {
+      array[j]=array[i,j];
+    }
+    sortArray+=SortArrayMaxMin(Array);
+    
+  }
+  return sortArray;
+  
+}
+  
+
+
+
+
+Console.WriteLine();
+end region
 
 /*Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку
 с наименьшей суммой элементов.
