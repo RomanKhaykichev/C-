@@ -5,35 +5,36 @@ Console.Clear();
 //Печать сообщения, возврат числа
 int GetPrintNumber(string message)
 {
-  Console.Write(message);
-  return int.Parse(Console.ReadLine());
+    Console.Write(message);
+    return int.Parse(Console.ReadLine());
 }
 
 //Заполнение массива
-int[,] FillArray(int rows,int columns,int min,int max)
+int[,] FillArray(int rows, int columns, int min, int max)
 {
-  int[,] array=new int[rows,columns];
-  Random num = new Random();
-  for(int i=0;i<array.GetLenght(0);i++)
-  {
-    for(int j=0;array.GetLenght(1);j++)
+    int[,] array = new int[rows, columns];
+    Random num = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      array[i,j]=num.Next(min,max+1);
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = num.Next(min, max + 1);
+        }
     }
-  }
+    return array;
 }
 
 //Печать массива
 void PrintArray(int[,] array)
 {
-  for(int i=0;i<array.GetLenght(0);i++)
-  {
-    for(int j=0;array.GetLenght(1);j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      Console.Write(array[i,j]+" ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-  }
 }
 
 /*Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы
@@ -46,49 +47,59 @@ void PrintArray(int[,] array)
 7 4 2 1
 9 5 3 2
 8 4 4 2*/
-region Task 54
+/*#region Task 54
+
 Console.WriteLine("Задача 54: Упорядочить по убыванию элементы каждой строки");
 
-int[]SortArrayMaxMin(int[]array)
+int[] SortRowsMaxMin(int[] array)
 {
-  int[]array=new int[array.Lenght];
-  int temp=0;
-  for(int i=1;i<array.Lenght;i++)
-  {
-    for(int j=0;j<array.Lenght-i;j++)
+    int temp = 0;
+    for (int i = 1; i < array.Length; i++)
     {
-      if(array[j]<array[j+1])
-      {
-        temp= array[j];
-      array[j]=array[j+1];
-      array[j+1]=temp;
+        for (int j = 0; j < array.Length - i; j++)
+        {
+            if (array[j] < array[j + 1])
+            {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
     }
-  }
-  return array;
+    return array;
+}
+int[,] SortArrayMaxToMin(int[,] array)
+{
+    int[,] sortArray = new int[array.GetLength(0), array.GetLength(1)];
+    int[] arrayRows = new int[array.GetLength(1)];
+    int[] sortArrayRows = new int[array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            arrayRows[j] = array[i, j];
+        }
+        sortArrayRows = SortRowsMaxMin(arrayRows);
+        for (int l = 0; l < array.GetLength(1); l++)
+        {
+            sortArray[i, l] = sortArrayRows[l];
+        }
+
+    }
+    return sortArray;
+
 }
 
-int[,] SortRowsMaxToMin(int[,] array)
-{
-  int[,] sortArray=new int[array.GetLenght(0),array.GetLenght(1)];
-  for(int i=0;i<array.GetLenght(0);i++)
-  {
-    for(int j=0;j<array.GetLenght(1);j++)
-    {
-      array[j]=array[i,j];
-    }
-    sortArray+=SortArrayMaxMin(Array);
-    
-  }
-  return sortArray;
-  
-}
-  
+int rows = GetPrintNumber("Введите колличество строк: ");
+int columns = GetPrintNumber("Введите колличество столбцов: ");
+int[,] array = FillArray(rows, columns, 1, 9);
+PrintArray(array);
+Console.WriteLine("--------------");
 
-
-
+PrintArray(SortArrayMaxToMin(array));
 
 Console.WriteLine();
-end region
+#endregion*/
 
 /*Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку
 с наименьшей суммой элементов.
@@ -100,6 +111,41 @@ end region
 5 2 6 7
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка*/
 
+/*#region Task 56
+
+Console.WriteLine("Задача 56: Строка с наименьшей суммой элементов");
+
+void GetNumberMinRowsArray(int[,] array)
+{
+    int count = 0;
+    int sum = 0;
+    int variable = 0;
+    for (int j = 0, r = 0; j < array.GetLength(1); j++)
+    {
+        variable += array[r, j];
+    }
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sum += array[i, j];
+        }
+        Console.Write(sum+" ");
+        if (sum <= variable) { variable = sum; count = i + 1; }
+        sum = 0;
+    }
+    Console.Write("=> ");
+    Console.WriteLine($"Строка с наименьшей суммой элементов: {count}");
+}
+
+int[,] array56 = FillArray(6, 4, 1, 9);
+PrintArray(array56);
+Console.WriteLine("--------------");
+GetNumberMinRowsArray(array56);
+
+Console.WriteLine();
+#endregion*/
+
 /*Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 Например, даны 2 матрицы:
 2 4 | 3 4
@@ -107,9 +153,47 @@ end region
 Результирующая матрица будет:
 18 20
 15 18*/
+/*#region Task 58
+
+Console.WriteLine("Задача 56: Произведение двух матриц");
+
+int[,] GetMultiMatrix(int[,] array1, int[,] array2)
+{
+    int lenghtRow = array1.GetLength(0);
+    int lenghtColumn = array1.GetLength(1);
+    int[,] matrix = new int[lenghtRow, lenghtColumn];
+
+    for (int i = 0; i < lenghtRow; i++)
+    {
+        for (int j = 0; j < lenghtColumn; j++)
+        {
+            int sum = 0;
+            for (int r = 0; r < lenghtRow; r++)
+            {
+                sum += array1[i, r] * array2[r, j];
+            }
+            matrix[i, j] = sum;
+        }
+    }
+
+    return matrix;
+    // else return Console.WriteLine("Такие матрицы нельзя перемножить, так как количество столбцов матрицы А не равно количеству строк матрицы В");
+}
+
+int[,] array58 = FillArray(3, 3, 1, 9);
+PrintArray(array58);
+Console.WriteLine("-----");
+int[,] array582 = FillArray(3, 3, 1, 9);
+PrintArray(array582);
+Console.WriteLine("--------------");
+PrintArray(GetMultiMatrix(array58, array582));
+
+Console.WriteLine();
+#endregion*/
 
 /*Необязательная к выполнению задача (не будет влиять на итоговую оценку ДЗ)
-Дополнительная задача (задача со звёздочкой): Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+Дополнительная задача (задача со звёздочкой): Сформируйте трёхмерный массив из неповторяющихся двузначных чисел.
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 Массив размером 2 x 2 x 2
 66(0,0,0) 25(0,1,0)
 34(1,0,0) 41(1,1,0)
