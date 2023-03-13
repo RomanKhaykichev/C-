@@ -47,7 +47,7 @@ void PrintArray(int[,] array)
 7 4 2 1
 9 5 3 2
 8 4 4 2*/
-/*#region Task 54
+#region Task 54
 
 Console.WriteLine("Задача 54: Упорядочить по убыванию элементы каждой строки");
 
@@ -111,7 +111,7 @@ Console.WriteLine();
 5 2 6 7
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка*/
 
-/*#region Task 56
+#region Task 56
 
 Console.WriteLine("Задача 56: Строка с наименьшей суммой элементов");
 
@@ -120,9 +120,9 @@ void GetNumberMinRowsArray(int[,] array)
     int count = 0;
     int sum = 0;
     int variable = 0;
-    for (int j = 0, r = 0; j < array.GetLength(1); j++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
-        variable += array[r, j];
+        variable += array[0, j];
     }
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -153,9 +153,9 @@ Console.WriteLine();
 Результирующая матрица будет:
 18 20
 15 18*/
-/*#region Task 58
+#region Task 58
 
-Console.WriteLine("Задача 56: Произведение двух матриц");
+Console.WriteLine("Задача 58: Произведение двух матриц");
 
 int[,] GetMultiMatrix(int[,] array1, int[,] array2)
 {
@@ -200,25 +200,43 @@ Console.WriteLine();
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
 
-/*#region Task 1*
-Console.WriteLine("Задача 1*: Построчно выводить массив, добавляя индексы каждого элемента");
+#region Task 1*
+Console.WriteLine("Доп. задача 1*: Построчно выводить массив, добавляя индексы каждого элемента");
 
-int[,,] array3Dem=new int[,,]{{{66,25,34,41},{27,90,26,50}}};
-void PrintArray3Dem(int[,,]array)
+//int[,,] array3Dem = new int[,,] { { { 66, 25, 34, 41 }, { 27, 90, 26, 50 } } };
+int[,,] FillArray3Dem(int rows, int columns, int third, int min, int max)
 {
-    for (int i=0; i<array.GetLenght(0);i++)
-         {
-             for(int j=0; j<array.GetLenght(1);j++)
-             {
-                 for(int z=0; z<array.GetLenght(2);z++)
-                 {
-                     Console.Write($"{array[i,j,z]}(i,j,z) ");
-                 }
-                 Console.WriteLIne();
-             }
-         }
+    int[,,] array = new int[rows, columns, third];
+    Random num = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int z = 0; z < array.GetLength(2); z++)
+            {
+                array[i, j, z] = num.Next(min, max + 1);
+            }
+        }
+    }
+    return array;
+}
+void PrintArray3Dem(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int z = 0; z < array.GetLength(2); z++)
+            {
+                Console.Write($"{array[i, j, z]}({i},{j},{z}) ");
+            }
+            Console.WriteLine();
+        }
+    }
 }
 
+
+int[,,] array3Dem = FillArray3Dem(2, 2, 2, 10, 99);
 PrintArray3Dem(array3Dem);
 
 Console.WriteLine();
@@ -231,7 +249,3 @@ Console.WriteLine();
 12 13 14 05
 11 16 15 06
 10 09 08 07*/
-
-
-
-
