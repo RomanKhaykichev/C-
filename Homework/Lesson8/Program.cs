@@ -177,8 +177,14 @@ int[,] GetMultiMatrix(int[,] array1, int[,] array2)
     }
 
     return matrix;
-    // else return Console.WriteLine("Такие матрицы нельзя перемножить, так как количество столбцов матрицы А не равно количеству строк матрицы В");
 }
+
+bool CompareMatrix(int[,] array1, int[,] array2)
+{
+    if (array1.GetLength(0) == array2.GetLength(0) && array1.GetLength(1) == array2.GetLength(1)) return true;
+    else return false;
+}
+
 
 int[,] array58 = FillArray(3, 3, 1, 9);
 PrintArray(array58);
@@ -186,7 +192,8 @@ Console.WriteLine("-----");
 int[,] array582 = FillArray(3, 3, 1, 9);
 PrintArray(array582);
 Console.WriteLine("--------------");
-PrintArray(GetMultiMatrix(array58, array582));
+if (CompareMatrix(array58, array582)) PrintArray(GetMultiMatrix(array58, array582));
+else Console.WriteLine("Такие матрицы нельзя перемножить, так как матрица А не соответствует матрице В по строкам и столбцам!");
 
 Console.WriteLine();
 #endregion*/
