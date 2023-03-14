@@ -58,12 +58,20 @@ Console.WriteLine("---Задача 68: наибольший общий дели�
 
 int m3 = GetPrintNumber("Введите 1 число: ");
 int n3 = GetPrintNumber("Введите 2 число: ");
-Console.WriteLine(GetMaxDevide(m3, n3));
+//Console.WriteLine(
+GetMaxDevide(m3, n3);
 
-int GetMaxDevide(int m, int n)
+void GetMaxDevide(int m, int n)
 {
-// TODO
-
+    int max = m, min = n;
+    if (m < n) { max = n; min = m; }
+    int remainder = max % min;
+    // remainder=min%remainder;
+    // if(max%min!=0&&min%min!=0){ GetMaxDevide(m,n-1);}
+    // else  Console.WriteLine(min);
+    //if(max%min!=0&&min%min!=0)GetMaxDevide(m,n%10);
+    if (min % remainder > 0) GetMaxDevide(m, n % 10);
+    else Console.WriteLine(min);
 }
 
 
