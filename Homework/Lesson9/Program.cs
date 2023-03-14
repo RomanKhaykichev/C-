@@ -11,7 +11,7 @@ int GetPrintNumber(string message)
 в промежутке от M до N с помощью рекурсии.
 M = 1; N = 5 -> 2, 4
 M = 4; N = 8 -> 4, 6, 8*/
-#region Task 64
+/*#region Task 64
 Console.WriteLine("---Задача 64: все чётные натуральные числа в промежутке от M до N---");
 
 int m = GetPrintNumber("Введите 1 число: ");
@@ -33,19 +33,39 @@ Console.WriteLine();
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
 
-#region Task 66
-Console.WriteLine("");
+/*#region Task 66
+Console.WriteLine("---Задача 66: сумма натуральных элементов в промежутке от M до N---");
+
+int m2 = GetPrintNumber("Введите 1 число: ");
+int n2 = GetPrintNumber("Введите 2 число: ");
+Console.Write($"Sum => {GetSumNumber(m2, n2)}");
+
+int GetSumNumber(int m, int n)
+{
+    if (m > n) return 0;
+    else return m + GetSumNumber(m + 1, n);
+}
 
 Console.WriteLine();
-#endregion
-
+#endregion*/
 
 /*Задача 68: Задайте значения M и N. Напишите программу, которая найдёт наибольший общий делитель
 (НОД) этих чисел с помощью рекурсии.
 M = 28; N = 7 -> 7*/
 
 #region Task 68
-Console.WriteLine("");
+Console.WriteLine("---Задача 68: наибольший общий делитель (НОД) этих чисел---");
+
+int m3 = GetPrintNumber("Введите 1 число: ");
+int n3 = GetPrintNumber("Введите 2 число: ");
+Console.WriteLine(GetMaxDevide(m3, n3));
+
+int GetMaxDevide(int m, int n)
+{
+// TODO
+
+}
+
 
 Console.WriteLine();
 #endregion
