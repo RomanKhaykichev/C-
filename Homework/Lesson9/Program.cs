@@ -11,7 +11,7 @@ int GetPrintNumber(string message)
 в промежутке от M до N с помощью рекурсии.
 M = 1; N = 5 -> 2, 4
 M = 4; N = 8 -> 4, 6, 8*/
-/*#region Task 64
+#region Task 64
 Console.WriteLine("---Задача 64: все чётные натуральные числа в промежутке от M до N---");
 
 int m = GetPrintNumber("Введите 1 число: ");
@@ -33,7 +33,7 @@ Console.WriteLine();
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
 
-/*#region Task 66
+#region Task 66
 Console.WriteLine("---Задача 66: сумма натуральных элементов в промежутке от M до N---");
 
 int m2 = GetPrintNumber("Введите 1 число: ");
@@ -58,45 +58,37 @@ Console.WriteLine("---Задача 68: наибольший общий дели�
 
 int m3 = GetPrintNumber("Введите 1 число: ");
 int n3 = GetPrintNumber("Введите 2 число: ");
-//Console.WriteLine(
 GetMaxDevide(m3, n3);
 
 void GetMaxDevide(int m, int n)
 {
     int max = m, min = n;
     if (m < n) { max = n; min = m; }
-    //int remainder = max % min;
-    // remainder=min%remainder;
-    // if(max%min!=0&&min%min!=0){ GetMaxDevide(m,n-1);}
-    // else  Console.WriteLine(min);
-    //if(max%min!=0&&min%min!=0)GetMaxDevide(m,n%10);
-    if (max%min==0) GetMaxDevide(max%min, min);
+    if (max%min!=0) GetMaxDevide(max%min, min);
     else Console.WriteLine(min);
 }
 
 
 Console.WriteLine();
-#endregion
-
+#endregion*/
 
 /*Необязательная к выполнению задача (не будет влиять на итоговую оценку ДЗ)
 Дополнительная задача (задача со звёздочкой): Напишите программу вычисления функции Аккермана с помощью рекурсии.
 Даны два неотрицательных числа m и n.
 m = 3, n = 2 -> A(m,n) = 29*/
 
-#region Task 68
-Console.WriteLine("---Доп. задача 1: Вычисления функции Аккермана---");
+#region Task 1*
+Console.WriteLine("---Доп. задача 1*: Вычисления функции Аккермана---");
 
 int m4 = GetPrintNumber("Введите 1 число: ");
 int n4 = GetPrintNumber("Введите 2 число: ");
-//Console.WriteLine(
-GetNumberAkkermana(m4,n4)
+Console.WriteLine(GetNumberAkkermana(m4, n4));
 
-void GetNumberAkkermana(m,n)
+int GetNumberAkkermana(int m, int n)
 {
-    if (m==0) n+1;
-    if (m>0 && n=0) GetNumberAkkermana(m-1,1)
-    if (m>0 && n>0) GetNumberAkkermana(m-1,GetNumberAkkermana(m,n-1))
+    if (m > 0 && n == 0) return GetNumberAkkermana(m - 1, 1);
+    if (m > 0 && n > 0) return GetNumberAkkermana(m - 1, GetNumberAkkermana(m, n - 1));
+    else return n + 1;;
 }
 
 Console.WriteLine();
