@@ -65,12 +65,12 @@ void GetMaxDevide(int m, int n)
 {
     int max = m, min = n;
     if (m < n) { max = n; min = m; }
-    int remainder = max % min;
+    //int remainder = max % min;
     // remainder=min%remainder;
     // if(max%min!=0&&min%min!=0){ GetMaxDevide(m,n-1);}
     // else  Console.WriteLine(min);
     //if(max%min!=0&&min%min!=0)GetMaxDevide(m,n%10);
-    if (min % remainder > 0) GetMaxDevide(m, n % 10);
+    if (max%min==0) GetMaxDevide(max%min, min);
     else Console.WriteLine(min);
 }
 
@@ -83,6 +83,24 @@ Console.WriteLine();
 Дополнительная задача (задача со звёздочкой): Напишите программу вычисления функции Аккермана с помощью рекурсии.
 Даны два неотрицательных числа m и n.
 m = 3, n = 2 -> A(m,n) = 29*/
+
+#region Task 68
+Console.WriteLine("---Доп. задача 1: Вычисления функции Аккермана---");
+
+int m4 = GetPrintNumber("Введите 1 число: ");
+int n4 = GetPrintNumber("Введите 2 число: ");
+//Console.WriteLine(
+GetNumberAkkermana(m4,n4)
+
+void GetNumberAkkermana(m,n)
+{
+    if (m==0) n+1;
+    if (m>0 && n=0) GetNumberAkkermana(m-1,1)
+    if (m>0 && n>0) GetNumberAkkermana(m-1,GetNumberAkkermana(m,n-1))
+}
+
+Console.WriteLine();
+#endregion*/
 
 /*Необязательная к выполнению задача (не будет влиять на итоговую оценку ДЗ)
 Дополнительная задача 2 (задача со звёздочкой): Напишите программу, которая выводит монотонную последовательность
